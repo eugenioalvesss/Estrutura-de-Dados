@@ -2,44 +2,50 @@ package Exe1;
 
 public class Lista {
 	
-	private Elemento primeira_posicao;
-	
-	private Elemento ultima_posicao;
+	 private Elemento primeiro_posicao;
 
-	private int tamanho_lista;
+	 private Elemento ultima_posicao;
 
-	public Lista() {
-		this.tamanho_lista = 0;
-		
+	 private int tamanho;
+	    
+	    public Lista(){
+	        this.tamanho = 0;
+	    }
+
+	    public int getTamanho() {
+	        return tamanho;
+	    }
+
+	    public void adicionar(int novoValor){
+	    	
+	        Elemento new_elemento = new Elemento(novoValor);
+
+	        if (this.primeiro_posicao == null && this.ultima_posicao == null){
+	            this.primeiro_posicao = new_elemento;
+	            this.ultima_posicao = new_elemento;
+	        }else{
+	        	
+	            this.ultima_posicao.setProximo(new_elemento);
+	            this.ultima_posicao = new_elemento;
+
+	        }
+	        this.tamanho++;
+	    }
+
+	    public int get_valor_na_posicao(int posicao){
+
+	        Elemento atual = this.primeiro_posicao;
+
+	        for(int i=0; i < posicao; i++){
+
+	            if (atual.getProximo() != null){
+
+	                atual = atual.getProximo();
+	           }
+
+	       }
+
+	        return atual.getValor_elemento();
 	}
-	
-	public void add (int novo_valor) {
-		
-		// transformando valor no tipo elemento 
-		Elemento novo_elemento = new Elemento(novo_valor);
-		
-		// se a fila for vazia 
-		if(this.primeira_posicao == null && ultima_posicao == null) {
-			primeira_posicao = novo_elemento;
-			ultima_posicao = novo_elemento;
-		}else { // Se já tiver alguem na fila 
-			ultima_posicao = novo_valor;
-			
-		}
-		
-	}
-	
-	public int getVariavel (int valor_posicao) {
-		
-		Elemento primeira_posicao = this.primeira_posicao;
-		
-		for(int i=0; i < valor_posicao; i++) {
-			if(primeira_posicao.getProximo() != null) {
-				primeira_posicao = primeira_posicao.getProximo();
-				
-			}
-		}
-		
-		return primeira_posicao.getValor_posicao();
-	}
+
 }

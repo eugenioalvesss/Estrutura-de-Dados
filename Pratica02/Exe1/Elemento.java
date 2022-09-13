@@ -1,32 +1,29 @@
 package Exe1;
 
 public class Elemento {
-	
-	private int valor_posicao;
-	private Elemento proximo;
-	
-	public Elemento(int valor_posicao) {
-		this.valor_posicao = valor_posicao;
-	}
 
-	public int getValor_posicao() {
-		return valor_posicao;
-	}
+    private int valor_elemento;
 
-	public void setValor_posicao(int valor_posicao) {
-		this.valor_posicao = valor_posicao;
-	}
+    private Elemento proximo;
 
-	public Elemento getProximo() {
-		return proximo;
-	}
+    public Elemento(int novoValor){
+        this.valor_elemento = novoValor;
+    }
 
-	public void setProximo(Elemento proximo) {
-		this.proximo = proximo;
-	}
-	
-	
-	
-	
+    public int getValor_elemento() {
+        return valor_elemento;
+    }
+
+    public void setValor_elemento(int valor_elemento) {
+        this.valor_elemento = valor_elemento;
+    }
+
+    public Elemento getProximo() {
+        return proximo;
+    }
+
+    public void setProximo(Elemento proximo) {
+        this.proximo = proximo;
+    }
 
 }
